@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-cream-50: #fcfaf5;
+  --color-cream-100: #f7f2e8;
+  --color-cream-200: #eee5d3;
+  --color-cream-300: #e0d2b8;
+
+  --color-gold-100: #f3e8d4;
+  --color-gold-300: #dcc08c;
+  --color-gold-400: #c9a86a;
+  --color-gold-500: #b08d57;
+  --color-gold-600: #96733f;
+  --color-gold-700: #7c5c30;
+
+  --color-espresso-200: #d8cdbb;
+  --color-espresso-300: #b9ab93;
+  --color-espresso-400: #978670;
+  --color-espresso-500: #7a6a55;
+  --color-espresso-600: #5d5041;
+  --color-espresso-700: #453b2f;
+  --color-espresso-800: #2e271e;
+  --color-espresso-900: #1d1811;
+  --color-espresso-950: #14100b;
+
+  --color-forest-100: #e4ece5;
+  --color-forest-300: #a5bda9;
+  --color-forest-500: #3d614b;
+  --color-forest-600: #2c4c39;
+  --color-forest-700: #213b2c;
+  --color-forest-800: #1a2e22;
+  --color-forest-900: #122216;
+
+  --color-clay-100: #f7e3dc;
+  --color-clay-600: #a8402a;
+
+  --color-wa-400: #46d17d;
+  --color-wa-500: #29bf63;
+  --color-wa-600: #1fa552;
+  --color-wa-700: #188543;
+
+  --shadow-card: 0 12px 40px -18px rgb(29 24 17 / 0.22);
+  --shadow-lift: 0 30px 70px -28px rgb(29 24 17 / 0.35);
+
+  --animate-marquee: marquee 36s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream-50 font-sans text-espresso-900 antialiased;
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-espresso-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-cream-300);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-400);
+}
+
+/* Subtle luxury dot texture used on cream panels */
+.bg-weave {
+  background-image: radial-gradient(rgb(176 141 87 / 0.09) 1px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Pause trust marquee on hover (desktop nicety) */
+.marquee:hover > .animate-marquee {
+  animation-play-state: paused;
+}
